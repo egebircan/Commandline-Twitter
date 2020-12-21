@@ -6,7 +6,7 @@ const chromedriver = require('chromedriver')
 const prompt = require('prompt-sync')()
 
 const tweetTextAreaPath = "/html/body/div/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div"
-const tweetButtonPath = '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[2]/div/div/div[2]/div[3]/div'
+const tweetButtonPath = '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div[1]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[4]/div/div/div[2]/div[3]/div/span/span'
 
 const screen = {
   width: 300,
@@ -22,7 +22,7 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
                 .build()
 
   const username = prompt('Enter your user name: ')
-  const password = prompt('Enter your password: ')
+  const password = prompt('Enter your password: ', {echo: '*'});
   const tweetText = prompt('Type the tweet: ')
 
   try {
